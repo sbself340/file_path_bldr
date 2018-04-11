@@ -76,11 +76,8 @@ def xlsx_writer(df, destination):
 
 def main():
     parent, destination = locations()
-#    print('{}\n{}'.format(parent, destination))
-#    os.chdir(parent)
     paths = find_paths(parent)
     name, fullname, loc = list_files(paths)
-#    dash_num = dashes(loc)
     df = path_parser(loc, fullname, name)
     xlsx_writer(df, destination)
     print('File Created')
